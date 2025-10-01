@@ -1,0 +1,377 @@
+/* 电池充电动画 */
+@keyframes battery-charge {
+  0% {
+    fill: #e5e7eb;
+    transform: scale(1);
+  }
+  50% {
+    fill: #a7f3d0;
+    transform: scale(1.05);
+  }
+  100% {
+    fill: #14B8A6;
+    transform: scale(1);
+  }
+}
+
+.battery-charging {
+  animation: battery-charge 2s ease-in-out infinite;
+}
+
+/* 脉冲动画 */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(20, 184, 166, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(20, 184, 166, 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* 闪烁动画 */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.3;
+  }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* 浮动动画 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 渐变进入 */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+/* 渐变进入延迟 */
+.fade-in-up-delay-1 {
+  animation: fade-in-up 0.6s ease-out 0.1s both;
+}
+
+.fade-in-up-delay-2 {
+  animation: fade-in-up 0.6s ease-out 0.2s both;
+}
+
+.fade-in-up-delay-3 {
+  animation: fade-in-up 0.6s ease-out 0.3s both;
+}
+
+/* 滑动进入 */
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.5s ease-out;
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+/* 缩放进入 */
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scale-in {
+  animation: scale-in 0.4s ease-out;
+}
+
+/* 旋转动画 */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* 心跳动画 */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* 打字机效果 */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end);
+}
+
+/* 闪烁光标 */
+@keyframes blink-cursor {
+  0%, 50% {
+    border-right-color: transparent;
+  }
+  51%, 100% {
+    border-right-color: currentColor;
+  }
+}
+
+.blink-cursor {
+  border-right: 2px solid;
+  animation: blink-cursor 1s step-end infinite;
+}
+
+/* 波浪动画 */
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.wave {
+  animation: wave 10s linear infinite;
+}
+
+/* 呼吸灯效果 */
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* 弹跳动画 */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}
+
+/* 闪光效果 */
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  animation: flash 2s ease-in-out infinite;
+}
+
+/* 震动效果 */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* 滚动数字 */
+@keyframes scroll-number {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.scroll-number {
+  animation: scroll-number 0.5s ease-out;
+}
+
+/* 3D翻转 */
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+.flip {
+  animation: flip 2s linear infinite;
+}
+
+/* 加载旋转 */
+@keyframes loading-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-rotate {
+  animation: loading-rotate 1s linear infinite;
+}
+
+/* 进度条动画 */
+@keyframes progress-bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.progress-bar {
+  animation: progress-bar 2s ease-in-out;
+}
+
+/* 霓虹灯效果 */
+@keyframes neon-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #14B8A6, 0 0 20px #14B8A6;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #14B8A6, 0 0 40px #14B8A6;
+  }
+}
+
+.neon-glow {
+  animation: neon-glow 1.5s ease-in-out infinite;
+}
+
+/* 工具类 */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 响应式动画 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

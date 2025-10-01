@@ -1,0 +1,93 @@
+{
+  "common": {
+    "login": "登录",
+    "logout": "退出",
+    "viewDetails": "查看详情",
+    "learnMore": "了解更多",
+    "contactUs": "联系我们",
+    "download": "下载",
+    "submit": "提交",
+    "cancel": "取消",
+    "confirm": "确认",
+    "back": "返回"
+  },
+  "nav": {
+    "home": "首页",
+    "products": "产品中心",
+    "cases": "成功案例",
+    "about": "关于我们",
+    "contact": "联系我们"
+  },
+  "home": {
+    "slogan": "储能医生 · 让\"沉默\"储能柜重新跑起来",
+    "heroTitle": "30分钟，让死柜复活",
+    "rescueNow": "立即救援",
+    "viewCases": "查看案例",
+    "productIntro": "产品介绍",
+    "painPoints": "储能柜常见痛点",
+    "solution": "三步救援方案",
+    "successCases": "成功案例",
+    "rescueChannel": "立即申请救援"
+  },
+  "products": {
+    "title": "产品中心",
+    "hardware": "DTU硬件设备",
+    "platform": "云平台服务",
+    "highlights": "产品亮点",
+    "specs": "技术规格",
+    "images": "产品实拍",
+    "consultNow": "立即咨询",
+    "downloadSpec": "下载规格书",
+    "viewDemo": "观看演示",
+    "features": "平台功能",
+    "advantages": "核心优势"
+  },
+  "cases": {
+    "title": "成功案例",
+    "filterIndustry": "选择行业",
+    "filterCapacity": "选择容量",
+    "filterOfflineTime": "离线时长",
+    "totalCases": "累计救援案例",
+    "totalRevenue": "累计恢复收益",
+    "avgRescueTime": "平均救援时长",
+    "successRate": "救援成功率",
+    "viewDetail": "查看详情",
+    "problemBackground": "问题背景",
+    "rescueProcess": "救援过程",
+    "effectComparison": "救援效果对比",
+    "customerTestimonial": "客户评价",
+    "techSpecs": "技术参数"
+  },
+  "login": {
+    "title": "登录储能医生平台",
+    "phonePlaceholder": "请输入手机号",
+    "smsCodePlaceholder": "请输入验证码",
+    "getSmsCode": "获取验证码",
+    "loginNow": "立即登录",
+    "agreement": "登录即代表同意",
+    "userAgreement": "用户协议",
+    "privacyPolicy": "隐私政策",
+    "retryIn": "秒后重试"
+  },
+  "form": {
+    "name": "姓名",
+    "company": "公司",
+    "capacity": "柜体容量",
+    "offlineTime": "离线时长",
+    "address": "地址",
+    "photos": "现场照片",
+    "required": "必填",
+    "submitApplication": "提交救援申请",
+    "loginToSubmit": "登录后可提交申请",
+    "loginToViewProgress": "登录后可查看救援进度"
+  },
+  "footer": {
+    "companyInfo": "储能医生",
+    "slogan": "专业解决储能柜断连问题，让沉默储能柜重新跑起来",
+    "quickLinks": "快速导航",
+    "productsServices": "产品服务",
+    "backToTop": "回到顶部",
+    "copyright": "版权所有",
+    "icp": "备案号"
+  }
+}

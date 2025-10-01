@@ -1,0 +1,41 @@
+# 图片占位文件说明
+
+由于无法直接创建图片文件，这里说明需要准备的图片资源：
+
+## 必需图片资源
+
+### 案例图片
+- /images/case-industrial.jpg - 工业园区案例图片
+- /images/case-commercial.jpg - 商业综合体案例图片  
+- /images/case-datacenter.jpg - 数据中心案例图片
+- /images/case-powerplant.jpg - 新能源电站案例图片
+- /images/case-industrial2.jpg - 工业园区二期案例图片
+- /images/case-building.jpg - 商业楼宇案例图片
+
+### 产品图片
+- /images/dtu-front.jpg - DTU正面图
+- /images/dtu-side.jpg - DTU侧面图
+- /images/dtu-install.jpg - 安装示意图
+
+### 步骤图片
+- /images/step1-1.jpg - 步骤1图片1
+- /images/step1-2.jpg - 步骤1图片2
+- /images/step2-1.jpg - 步骤2图片
+- /images/step3-1.jpg - 步骤3图片
+
+### 其他图片
+- /images/avatar-customer.jpg - 客户头像
+- /favicon.ico - 网站图标
+
+## 图片规格要求
+- 格式：JPG/PNG/WebP
+- 尺寸：建议宽度800-1200px
+- 大小：单张图片≤150KB
+- 质量：清晰、专业、符合品牌调性
+
+## 替代方案
+在实际项目中，可以使用以下占位图片服务：
+- https://picsum.photos/800/600
+- https://placeholder.com/800x600
+
+或者使用CSS创建占位背景色。

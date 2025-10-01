@@ -1,0 +1,93 @@
+{
+  "common": {
+    "login": "Login",
+    "logout": "Logout",
+    "viewDetails": "View Details",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "download": "Download",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "cases": "Success Cases",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "slogan": "ESS Doctor · Revive Silent Energy Storage Cabinets",
+    "heroTitle": "30 Minutes to Revive Dead Cabinets",
+    "rescueNow": "Rescue Now",
+    "viewCases": "View Cases",
+    "productIntro": "Product Introduction",
+    "painPoints": "Common Pain Points",
+    "solution": "3-Step Rescue Solution",
+    "successCases": "Success Cases",
+    "rescueChannel": "Apply for Rescue"
+  },
+  "products": {
+    "title": "Products Center",
+    "hardware": "DTU Hardware",
+    "platform": "Cloud Platform",
+    "highlights": "Product Highlights",
+    "specs": "Technical Specifications",
+    "images": "Product Photos",
+    "consultNow": "Consult Now",
+    "downloadSpec": "Download Specs",
+    "viewDemo": "Watch Demo",
+    "features": "Platform Features",
+    "advantages": "Core Advantages"
+  },
+  "cases": {
+    "title": "Success Cases",
+    "filterIndustry": "Select Industry",
+    "filterCapacity": "Select Capacity",
+    "filterOfflineTime": "Offline Duration",
+    "totalCases": "Total Rescue Cases",
+    "totalRevenue": "Total Revenue Recovery",
+    "avgRescueTime": "Average Rescue Time",
+    "successRate": "Success Rate",
+    "viewDetail": "View Details",
+    "problemBackground": "Problem Background",
+    "rescueProcess": "Rescue Process",
+    "effectComparison": "Effect Comparison",
+    "customerTestimonial": "Customer Testimonial",
+    "techSpecs": "Technical Parameters"
+  },
+  "login": {
+    "title": "Login to ESS Doctor Platform",
+    "phonePlaceholder": "Enter phone number",
+    "smsCodePlaceholder": "Enter verification code",
+    "getSmsCode": "Get Code",
+    "loginNow": "Login Now",
+    "agreement": "By logging in, you agree to",
+    "userAgreement": "User Agreement",
+    "privacyPolicy": "Privacy Policy",
+    "retryIn": "Retry in"
+  },
+  "form": {
+    "name": "Name",
+    "company": "Company",
+    "capacity": "Cabinet Capacity",
+    "offlineTime": "Offline Duration",
+    "address": "Address",
+    "photos": "Site Photos",
+    "required": "Required",
+    "submitApplication": "Submit Rescue Application",
+    "loginToSubmit": "Login to submit application",
+    "loginToViewProgress": "Login to view rescue progress"
+  },
+  "footer": {
+    "companyInfo": "ESS Doctor",
+    "slogan": "Professional solution for energy storage cabinet disconnection, reviving silent cabinets",
+    "quickLinks": "Quick Links",
+    "productsServices": "Products & Services",
+    "backToTop": "Back to Top",
+    "copyright": "All Rights Reserved",
+    "icp": "ICP Filing"
+  }
+}

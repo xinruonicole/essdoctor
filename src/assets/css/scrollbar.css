@@ -1,0 +1,57 @@
+/* 自定义滚动条样式 - 灰色主题 */
+/* Webkit浏览器 (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+  border: 2px solid #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #8f8f8f;
+}
+
+::-webkit-scrollbar-corner {
+  background: #f5f5f5;
+}
+
+/* Firefox浏览器 */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f5f5f5;
+}
+
+/* 针对特定元素的滚动条 */
+.hero-section::-webkit-scrollbar-track {
+  background: rgba(245, 245, 245, 0.8);
+}
+
+.hero-section::-webkit-scrollbar-thumb {
+  background: rgba(193, 193, 193, 0.8);
+}
+
+/* 深色背景区域的滚动条 */
+.dark-scrollbar::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.5);
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(107, 114, 128, 0.8);
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.8);
+}
