@@ -26,10 +26,10 @@
         <div class="footer-section">
           <h4 class="footer-subtitle">产品服务</h4>
           <div class="footer-links">
-            <a href="#" class="footer-link">DTU硬件设备</a>
-            <a href="#" class="footer-link">云平台服务</a>
-            <a href="#" class="footer-link">运维托管</a>
-            <a href="#" class="footer-link">技术咨询</a>
+            <router-link to="/products" class="footer-link">DTU硬件设备</router-link>
+            <router-link to="/products" class="footer-link">云平台服务</router-link>
+            <router-link to="/products" class="footer-link">运维托管</router-link>
+            <router-link to="/products" class="footer-link">技术咨询</router-link>
           </div>
         </div>
 

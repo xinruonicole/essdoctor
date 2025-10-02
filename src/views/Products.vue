@@ -23,8 +23,8 @@
             <div class="product-specs">
               <h3 class="specs-title">技术规格</h3>
               <el-table :data="hardwareSpecs" class="specs-table">
-                <el-table-column prop="item" label="项目" width="200" />
-                <el-table-column prop="spec" label="规格" />
+                <el-table-column prop="item" label="项目" :min-width="120" />
+                <el-table-column prop="spec" label="规格" :min-width="180" />
               </el-table>
             </div>
 
@@ -314,6 +314,27 @@ const viewDemo = () => {
 
 .specs-table {
   @apply w-full;
+}
+
+/* 手机端表格优化 */
+@media (max-width: 768px) {
+  .specs-table {
+    font-size: 14px;
+  }
+  
+  .specs-table :deep(.el-table__header-wrapper) th {
+    padding: 8px 4px;
+    font-size: 13px;
+  }
+  
+  .specs-table :deep(.el-table__body-wrapper) td {
+    padding: 8px 4px;
+    word-break: break-word;
+  }
+  
+  .specs-table :deep(.el-table__body-wrapper) .cell {
+    line-height: 1.4;
+  }
 }
 
 .product-images {

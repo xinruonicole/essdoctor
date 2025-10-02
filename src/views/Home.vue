@@ -11,6 +11,10 @@
             <div class="battery-model offline" :class="{ online: isBatteryOnline }">
               <div class="battery-body">
                 <div class="battery-fill" :style="{ height: batteryLevel + '%' }"></div>
+                <!-- 正极 -->
+                <div class="battery-terminal positive"></div>
+                <!-- 负极 -->
+                <div class="battery-terminal negative"></div>
               </div>
               <div class="dtu-device" :class="{ connected: isDTUConnected }">
                 <span>DTU</span>
@@ -100,7 +104,7 @@
     <section class="cases-preview-section">
       <div class="container-custom">
         <div class="section-header">
-          <h2 class="section-title">成功案例</h2>
+          <h2 class="section-title">典型救援案例</h2>
           <el-button type="text" @click="$router.push('/case')" class="more-btn">
             查看更多 →
           </el-button>
@@ -313,22 +317,57 @@ const submitRescue = async () => {
 
 // 初始化动画
 onMounted(() => {
+  console.log('页面加载完成，DTU初始状态:', isDTUConnected.value)
+  console.log('DTU设备应该完全隐藏，位置在电池右侧外部')
+  
+  // 确保DTU初始状态为false
+  isDTUConnected.value = false
+  
+  // 添加DOM检查，查看DTU元素的实际状态
   setTimeout(() => {
+    const dtuElement = document.querySelector('.dtu-device')
+    if (dtuElement) {
+      console.log('DTU元素初始状态:', dtuElement)
+      console.log('DTU元素类名:', dtuElement.className)
+      console.log('DTU元素样式:', window.getComputedStyle(dtuElement))
+    } else {
+      console.log('未找到DTU元素')
+    }
+  }, 500)
+  
+  setTimeout(() => {
+    console.log('开始DTU连接动画 - 从右侧滑入')
+    // DTU连接动画 - 从右侧滑入
     isDTUConnected.value = true
+    console.log('DTU连接状态已设置为true，应该开始滑入动画')
+    
+    // 检查DTU元素状态变化
     setTimeout(() => {
+      const dtuElement = document.querySelector('.dtu-device')
+      if (dtuElement) {
+        console.log('动画开始后DTU元素类名:', dtuElement.className)
+        console.log('动画开始后DTU元素样式:', window.getComputedStyle(dtuElement))
+        console.log('DTU元素位置:', dtuElement.getBoundingClientRect())
+      }
+    }, 500)
+    
+    // 等待DTU动画完全播放后再开始电池充电
+    setTimeout(() => {
+      console.log('开始电池充电动画')
       isBatteryOnline.value = true
       // 模拟电量恢复动画
       let level = 0
       const interval = setInterval(() => {
-        level += 5
+        level += 3
         batteryLevel.value = level
-        if (level >= 95) {
+        if (level >= 100) {
           clearInterval(interval)
-          batteryLevel.value = 95
+          batteryLevel.value = 100
+          console.log('电池充电完成')
         }
-      }, 100)
-    }, 500)
-  }, 1000)
+      }, 150)
+    }, 2000)  // 延长DTU动画播放时间
+  }, 1500)  // 延迟1.5秒开始动画
 })
 </script>
 
@@ -384,28 +423,76 @@ onMounted(() => {
 }
 
 .battery-body {
-  @apply absolute inset-0 bg-slate-700 rounded-xl border-4 border-slate-600 overflow-hidden;
+  @apply absolute inset-0 bg-slate-700 rounded-xl border-4 border-slate-600;
   transition: all 0.5s ease;
 }
 
 .battery-model.online .battery-body {
-  @apply border-green-400;
+  @apply border-slate-600; /* 保持离线状态的边框颜色 */
+  box-shadow: none; /* 去掉发光效果 */
 }
 
 .battery-fill {
   @apply absolute bottom-0 left-0 right-0 bg-slate-600 transition-all duration-1000;
+  border-radius: 8px 8px 8px 8px; /* 所有角都圆角，与外壳协调 */
 }
 
 .battery-model.online .battery-fill {
-  @apply bg-green-400;
+  background: linear-gradient(to top, #22c55e, #16a34a);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  border-radius: 8px 8px 8px 8px; /* 在线状态也保持圆角 */
+}
+
+/* 电池正负极样式 */
+.battery-terminal {
+  position: absolute;
+  width: 25px;
+  height: 30px; /* 增加高度，一半在内部一半凸出 */
+  border-radius: 0; /* 矩形 */
+  z-index: 100; /* 大幅提高层级 */
+  top: -15px; /* 一半凸出电池外面 */
+  background-color: #4b5563 !important; /* 与电池外壳相似的颜色 */
+}
+
+.battery-terminal.positive {
+  left: 50px; /* 偏左位置 */
+  background-color: #22c55e !important; /* 一直在线的绿色 */
+}
+
+.battery-terminal.negative {
+  right: 50px; /* 偏右位置 */
+  background-color: #22c55e !important; /* 一直在线的绿色 */
+}
+
+.battery-model.online .battery-terminal.positive {
+  background-color: #22c55e !important; /* 在线状态的绿色 */
+}
+
+.battery-model.online .battery-terminal.negative {
+  background-color: #22c55e !important; /* 在线状态的绿色 */
 }
 
 .dtu-device {
-  @apply absolute -right-8 top-1/2 transform -translate-y-1/2 bg-slate-600 text-white p-2 rounded-lg opacity-0 transition-all duration-500;
+  position: absolute;
+  bottom: 0;
+  right: -70px; /* 移动到电池外部右下角 */
+  background-color: rgb(100, 116, 139);
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease;
+  z-index: 10;
 }
 
 .dtu-device.connected {
-  @apply opacity-100 right-4 bg-green-500;
+  opacity: 1;
+  transform: scale(1);
+  background-color: rgb(34, 197, 94);
+  animation: dtu-pulse 2s ease-in-out infinite; /* 改为无限循环 */
+  right: -50px; /* 连接后稍微靠近电池，但仍在外部 */
 }
 
 .hero-text {
@@ -451,7 +538,7 @@ onMounted(() => {
 
 /* 痛点直击区域样式 */
 .pain-points-section {
-  @apply py-16 bg-slate-50;
+  @apply py-16 bg-white;
 }
 
 .section-title {
@@ -484,7 +571,7 @@ onMounted(() => {
 
 /* 救援方案区域样式 */
 .solution-section {
-  @apply py-16 bg-white;
+  @apply py-16 bg-slate-100;
 }
 
 .solution-steps {
@@ -509,15 +596,17 @@ onMounted(() => {
 
 /* 成功案例预览样式 */
 .cases-preview-section {
-  @apply py-16 bg-slate-50;
+  @apply py-16 bg-white;
 }
 
 .section-header {
-  @apply flex justify-between items-center mb-8;
+  @apply flex justify-center items-center mb-8 relative;
 }
 
 .more-btn {
   @apply text-green-500 hover:text-green-600;
+  position: absolute;
+  right: 0;
 }
 
 .cases-grid {
@@ -608,5 +697,16 @@ onMounted(() => {
 @keyframes pulse-blue {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+}
+
+@keyframes dtu-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  50% { 
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.5);
+  }
 }
 </style>
